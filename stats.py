@@ -15,3 +15,22 @@ def symbol_count(text):
             symbol[char] += 1
         else: symbol[char] = 1
     return symbol
+
+def display_character_stats(char_counts, word_count):
+    print("====================== BOOKBOT ======================")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("--------------------- Word Count --------------------")
+    print(f"Found {word_count} total words")
+    print("------------------- Character Count -----------------")
+    
+    sorted_counts = sorted(
+        ((char, count) for char, count in char_counts.items() if char.isalpha()),
+        key=lambda item: item[1],
+        reverse=True
+    )
+
+    for char, count in sorted_counts:
+        print(f"{char}: {count}")
+
+    print("======================= END =========================")
+
