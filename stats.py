@@ -16,9 +16,9 @@ def symbol_count(text):
         else: symbol[char] = 1
     return symbol
 
-def display_character_stats(char_counts, word_count):
+def display_character_stats(char_counts, word_count, book_path):
     print("====================== BOOKBOT ======================")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {book_path}...")
     print("--------------------- Word Count --------------------")
     print(f"Found {word_count} total words")
     print("------------------- Character Count -----------------")
@@ -31,6 +31,6 @@ def display_character_stats(char_counts, word_count):
 
     for char, count in sorted_counts:
         print(f"{char}: {count}")
-
     print("======================= END =========================")
+
 
